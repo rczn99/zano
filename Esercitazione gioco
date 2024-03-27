@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  char nome[50];
+  int punteggio = 0;
+  int controllo;
+  int domanda0, domanda1, domanda2, domanda3, domanda4;
+
+  // Presentazione del gioco
+  printf("Benvenuti nel Zano game! Per superare il gioco è necessario rispondere correttamente al 60%% delle domande.\n\nVuoi proseguire nel gioco?\nPremi 1 per continuare, 2 per uscire.\n");
+  scanf("%d", &controllo);
+
+  if (controllo == 1) {
+    printf("Perfetto, iniziamo! Come ti chiami?\n");
+    scanf("%s", nome);
+
+  } else if (controllo == 2) {
+    printf("Arrivederci!\n");
+    return 0;
+  } else {
+    printf("Scelta non valida. Inserisci 1 per continuare o 2 per uscire.\n");
+    return 0; 
+  }
+
+  // Inizio delle domande
+  printf("%s, iniziamo con le domande!\n", nome);
+
+  // Domanda 1
+  printf("Quante sono le regioni d'Italia?\n");
+  printf("1) 22\n");
+  printf("2) 20\n");
+  printf("3) 23\n");
+  printf("4) 18\n");
+
+  scanf("%d", &domanda0);
+
+  if (domanda0 == 2) {
+    punteggio++;
+    printf("Risposta corretta! Hai guadagnato un punto.\n\n");
+  } else {
+    printf("Risposta errata. La risposta corretta era: 2) 20\n\n");
+  }
+
+  // Domanda 2
+  printf("Quanti erano i nani di Biancaneve?\n");
+  printf("1) 8\n");
+  printf("2) 5\n");
+  printf("3) 7\n");
+  printf("4) 4\n");
+
+  scanf("%d", &domanda1);
+
+  if (domanda1 == 3) {
+    punteggio++;
+    printf("Risposta corretta! Hai guadagnato un punto.\n\n");
+  } else {
+    printf("Risposta errata. La risposta corretta era: 3) 7\n\n");
+  }
+
+  // Domanda 3
+  printf("Quali sono gli ingredienti della carbonara\n");
+  printf("1) Uova, guanciale e pecorino\n");
+  printf("2) Ketchup, grana padano e ananas\n");
+  printf("3) Uova, Panna, Pancetta\n");
+  printf("4) Basta un poco di zucchero e la pillola va giù\n");
+
+  scanf("%d", &domanda2);
+
+  if (domanda2 == 1) {
+    punteggio++;
+    printf("Risposta corretta! Hai guadagnato un punto.\n\n");
+  } else {
+    printf("Risposta errata. La risposta corretta era: 1) Uova, guanciale e pecorino\n\n");
+  }
+  // Domanda 4
+  printf("Dove si trovano Radio e Ulna?\n");
+  printf("1) Roma\n");
+  printf("2) Gamba\n");
+  printf("3) Londra\n");
+  printf("4) Braccio\n");
+
+  scanf("%d", &domanda3);
+
+  if (domanda3 == 4) {
+    punteggio++;
+    printf("Risposta corretta! Hai guadagnato un punto.\n\n");
+  } else {
+    printf("Risposta errata. La risposta corretta era: 4) Braccio\n\n");
+  }
+  // Domanda 5
+  printf("Qual'è un piatto tipico italiano\n");
+  printf("1) Crepes\n");
+  printf("2) Paella\n");
+  printf("3) Pizza\n");
+  printf("4) Gulash\n");
+
+  scanf("%d", &domanda4);
+
+  if (domanda4 == 3) {
+    punteggio++;
+    printf("Risposta corretta! Hai guadagnato un punto.\n\n");
+  } else {
+    printf("Risposta errata. La risposta corretta era: 3) Pizza\\n");
+  }
+
+  // Conclusione
+  printf("**Fine del quiz!**\n\n");
+  printf("Hai totalizzato %d punti su 5.\n", punteggio);
+
+  if (punteggio >= 3) {
+    printf("Congratulazioni, %s! Hai superato il gioco!\n", nome);
+  } else {
+    printf("Mi dispiace, %s. Non hai superato il gioco. Riprova la prossima volta!\n", nome);
+  }
+
+  return 0;
+}
